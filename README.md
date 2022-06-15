@@ -1,6 +1,4 @@
-> Our organizational level renovate configs
-
-When we onboard a new repository with `renovate` it will use the default config
+When onboarding a new repository with `renovate` it will use the default config
 (`default.json`) that essentially ships some sane defaults from `main.json` and
 comes with a weekend execution schedule.
 
@@ -9,7 +7,7 @@ this:
 
 ```js
 {
-  "extends": ["github>freecodecamp/renovate-config"]
+  "extends": ["github>raisedadead/renovate-config"]
 }
 ```
 
@@ -20,7 +18,7 @@ If you would like to override the defaults, then use something like the below:
    ```js
    {
     "extends": [
-      "github>freecodecamp/renovate-config:main",
+      "github>raisedadead/renovate-config:main",
       ...
       ],
     ...
@@ -32,7 +30,7 @@ If you would like to override the defaults, then use something like the below:
    ```js
    {
     "extends": [
-      "github>freecodecamp/renovate-config:default",
+      "github>raisedadead/renovate-config:default",
       ...
       ],
     ...

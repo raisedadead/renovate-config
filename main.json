@@ -4,6 +4,7 @@
     "config:base",
     "helpers:pinGitHubActionDigests"
   ],
+  "rangeStrategy": "pin",
   "branchConcurrentLimit": 20,
   "dependencyDashboard": true,
   "major": {

@@ -1,7 +1,0 @@
-{
-  "extends": ["github>raisedadead/renovate-config:main"],
-  "schedule": [
-    "every weekend before 1 day of October",
-    "every weekend after 1 day of November"
-  ]
-}

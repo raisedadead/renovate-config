@@ -1,0 +1,43 @@
+name: Validate Renovate Config
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**.json'
+      - '.github/workflows/validate.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - '**.json'
+      - '.github/workflows/validate.yml'
+  schedule:
+    # Run every Monday at 9:00 UTC to catch breaking changes
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 'lts/*'
+
+      - name: Validate default config (renovate.json)
+        run: npx --yes --package renovate -- renovate-config-validator --strict
+
+      - name: Validate main preset (main.json)
+        run: npx --yes --package renovate -- renovate-config-validator --strict main.json
+
+      - name: Validate default preset (default.json)
+        run: npx --yes --package renovate -- renovate-config-validator --strict default.json
+
+      - name: Validate weekend schedule preset
+        run: npx --yes --package renovate -- renovate-config-validator --strict schedule-weekend.json

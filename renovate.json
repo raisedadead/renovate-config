@@ -1,3 +1,5 @@
 {
-  "extends": ["github>raisedadead/renovate-config:main"]
+  "extends": [
+    "github>raisedadead/renovate-config"
+  ]
 }

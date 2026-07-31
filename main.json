@@ -5,11 +5,11 @@
     "dependencyDashboardApproval": true
   },
   "rebaseWhen": "conflicted",
-  "prConcurrentLimit": 5,
+  "prConcurrentLimit": 10,
   "prCreation": "not-pending",
   "internalChecksFilter": "strict",
   "dependencyDashboard": true,
-  "minimumReleaseAge": "3 days",
+  "minimumReleaseAge": "5 days",
   "minimumReleaseAgeBehaviour": "timestamp-optional",
   "packageRules": [
     {
